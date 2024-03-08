@@ -1,64 +1,55 @@
-// Carro.js
-import React, { useState, useCallback } from 'react';
-
-const CartIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="9" cy="21" r="1" />
-    <circle cx="20" cy="21" r="1" />
-    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 1.92 1.61h10.8a2 2 0 0 0 1.92-1.61L19 6H4" />
-  </svg>
-);
+import React, { useState } from 'react';
 
 export const Carro = ({
-  allProducts,
-  setAllProducts,
+  losProductos,
+  setlosProductos,
   total,
-  countProducts,
-  setCountProducts,
+  contarProductos,
+  setcontarProductos,
   setTotal,
 }) => {
-  const [active, setActive] = useState(false);
+  const [activacion, setactivacion] = useState(false);
 
-  const onDeleteProduct = product => {
-    const results = allProducts.filter(
+  const borrarProducto = product => {
+    const analisis = losProductos.filter(
       item => item.id !== product.id
     );
 
     setTotal(total - product.precio * product.cantida);
-    setCountProducts(countProducts - product.cantida);
-    setAllProducts(results);
+    setcontarProductos(contarProductos - product.cantida);
+    setlosProductos(analisis);
   };
 
-  const onCleanCart = () => {
-    setAllProducts([]);
+  const vaciarCarrito = () => {
+    setlosProductos([]);
     setTotal(0);
-    setCountProducts(0);
+    setcontarProductos(0);
   };
 
-  const redirectToGooglePay = () => {
+  const googlePAY = () => {
     window.location.href = 'https://pay.google.com/intl/es_es/about/';
   };
 
-  const onCheckout = async () => {
+  const utilizoFetch = async () => {
     try {
-      const dataToSend = allProducts.map(product => ({
+      const datitos = losProductos.map(product => ({
         id: product.id,
         NombreProducto: product.NombreProducto,
         cantida: product.cantida,
         precio: product.precio,
       }));
 
-      const response = await fetch('/api/GuardarDatos.php', {
+      const respuesta = await fetch('/api/GuardarDatos.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(dataToSend),
+        body: JSON.stringify(datitos),
       });
 
-      if (response.ok) {
+      if (respuesta.ok) {
         console.log('Datos del carrito guardados correctamente');
-        redirectToGooglePay();
+        googlePAY();
       } else {
         console.error('Error al intentar guardar datos del carrito');
       }
@@ -69,23 +60,23 @@ export const Carro = ({
 
 
   return (
-    <div className={`cart-container ${active ? 'active' : ''}`}>
-      <div className='container-icon' onClick={() => setActive(!active)}>
+    <div className={`cart-container ${activacion ? 'active' : ''}`}>
+      <div className='container-icon' onClick={() => setactivacion(!activacion)}>
       <svg className='icon-cart' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="12" height="12">
           <circle cx="9" cy="21" r="1" />
           <circle cx="20" cy="21" r="1" />
           <path d="M1 1h4l2.68 13.39a2 2 0 0 0 1.92 1.61h10.8a2 2 0 0 0 1.92-1.61L19 6H4" />
         </svg>
         <div className='count-products'>
-          <span id='contador-productos'>{countProducts}</span>
+          <span id='contador-productos'>{contarProductos}</span>
         </div>
       </div>
 
-      <div className={`container-cart-products ${active ? '' : 'hidden-cart'}`}>
-        {allProducts.length ? (
+      <div className={`container-cart-products ${activacion ? '' : 'hidden-cart'}`}>
+        {losProductos.length ? (
           <>
             <div className='row-product'>
-              {allProducts.map(product => (
+              {losProductos.map(product => (
                 <div className='cart-product' key={product.id}>
                   <div className='info-cart-product'>
                     <span className='cantidad-producto-carrito'>
@@ -104,7 +95,7 @@ export const Carro = ({
                     viewBox='0 0 24 24'
                     stroke='currentColor'
                     className='icon-close'
-                    onClick={() => onDeleteProduct(product)}
+                    onClick={() => borrarProducto(product)}
                   >
                     <path
                       strokeLinecap='round'
@@ -121,10 +112,10 @@ export const Carro = ({
               <span className='total-pagar'>{total.toFixed(2)} €</span>
             </div>
 
-            <button className='btn-clear-all' onClick={onCleanCart}>
+            <button className='btn-clear-all' onClick={vaciarCarrito}>
               Vaciar Carrito
             </button>
-            <button className='btn-terminar-pago' onClick={onCheckout}>
+            <button className='btn-terminar-pago' onClick={utilizoFetch}>
               Terminar Pago
             </button>
 

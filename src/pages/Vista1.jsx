@@ -3,14 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Body from '../components/Body';
-import Button from '../components/Button';  // Importa el componente Button
+import Button from '../components/Button';
 
 function Vista1() {
-  const navigate = useNavigate();
+  const enlaces = useNavigate();
 
   const irAVista2 = React.useCallback(() => {
-    navigate('/vista2');
-  }, [navigate]);
+    enlaces('/vista2');
+  }, [enlaces]);
 
   const botonEstilo = {
     backgroundColor: '#cc9900',

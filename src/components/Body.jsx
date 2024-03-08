@@ -13,7 +13,7 @@ import g4Img from '../assets/imagenes/g4.jpg';
 import fondoPequenoImg from '../assets/imagenes/fondoPequeño.jpg';
 import fondoImg from '../assets/imagenes/fondo.jpg';
 
-const HomePage = () => {
+const inicio = () => {
     return (
         <div>
             <section>
@@ -152,4 +152,4 @@ const HomePage = () => {
     );
 };
 
-export default HomePage;
+export default inicio;

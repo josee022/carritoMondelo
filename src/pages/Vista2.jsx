@@ -4,18 +4,18 @@ import { Carro } from '../components/Carro';
 import { Lista } from '../components/Lista';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import Button from '../components/Button';  // Importa el componente Button
+import Button from '../components/Button';
 
 function Vista2() {
-  const navigate = useNavigate();
+  const enlaces = useNavigate();
 
-  const [allProducts, setAllProducts] = React.useState([]);
+  const [losProductos, setlosProductos] = React.useState([]);
   const [total, setTotal] = React.useState(0);
-  const [countProducts, setCountProducts] = React.useState(0);
+  const [contarProductos, setcontarProductos] = React.useState(0);
 
   const irAVista1 = React.useCallback(() => {
-    navigate('/');
-  }, [navigate]);
+    enlaces('/');
+  }, [enlaces]);
 
   const botonEstilo = {
     backgroundColor: '#cc9900',
@@ -36,24 +36,24 @@ function Vista2() {
      <Header />
      <br /><br /><br />
       <Carro
-        allProducts={allProducts}
-        setAllProducts={setAllProducts}
+        losProductos={losProductos}
+        setlosProductos={setlosProductos}
         total={total}
         setTotal={setTotal}
-        countProducts={countProducts}
-        setCountProducts={setCountProducts}
+        contarProductos={contarProductos}
+        setcontarProductos={setcontarProductos}
       />
       <br /><br /><br />
       <Lista
-        allProducts={allProducts}
-        setAllProducts={setAllProducts}
+        losProductos={losProductos}
+        setlosProductos={setlosProductos}
         total={total}
         setTotal={setTotal}
-        countProducts={countProducts}
-        setCountProducts={setCountProducts}
+        contarProductos={contarProductos}
+        setcontarProductos={setcontarProductos}
       />
       <div className='vista2'>
-        <Button onClick={irAVista1} text="Volver al Home" style={botonEstilo} />
+        <Button onClick={irAVista1} text="Volver al Inicio" style={botonEstilo} />
       </div>
       <br /><br /><br /><br /><br /><br /><br /><br />
        <Footer />

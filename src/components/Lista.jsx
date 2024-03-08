@@ -1,62 +1,59 @@
-// Lista.jsx
 import React, { useState, useEffect } from 'react';
 import productos from '../assets/productos.json';
 
 export const Lista = ({
-  allProducts,
-  setAllProducts,
-  countProducts,
-  setCountProducts,
+  losProductos,
+  setlosProductos,
+  contarProductos,
+  setcontarProductos,
   total,
   setTotal,
 }) => {
-  const [loading, setLoading] = useState(true);
-  const [asyncProducts, setAsyncProducts] = useState([]);
+  const [cargar, setcargar] = useState(true);
+  const [productosAsincronos, setproductosAsincronos] = useState([]);
 
   useEffect(() => {
-    // Simulamos una carga asíncrona con setTimeout
     const fetchData = async () => {
-      setLoading(true);
+      setcargar(true);
       try {
-        // Simulamos una carga asíncrona con setTimeout
-        const response = await new Promise((resolve) =>
+        const respuesta = await new Promise((resolve) =>
           setTimeout(() => resolve(productos), 1000)
         );
 
-        setAsyncProducts(response);
+        setproductosAsincronos(respuesta);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error('Error :', error);
       } finally {
-        setLoading(false);
+        setcargar(false);
       }
     };
 
     fetchData();
-  }, []); // Solo se ejecuta al montar el componente
+  }, []);
 
-  const onAddProduct = (product) => {
-    if (allProducts.find((item) => item.id === product.id)) {
-      const products = allProducts.map((item) =>
+  const añadirProductos = (product) => {
+    if (losProductos.find((item) => item.id === product.id)) {
+      const objetos = losProductos.map((item) =>
         item.id === product.id
           ? { ...item, cantida: item.cantida + 1 }
           : item
       );
       setTotal(total + product.precio * product.cantida);
-      setCountProducts(countProducts + product.cantida);
-      setAllProducts([...products]);
+      setcontarProductos(contarProductos + product.cantida);
+      setlosProductos([...objetos]);
     } else {
       setTotal(total + product.precio * product.cantida);
-      setCountProducts(countProducts + product.cantida);
-      setAllProducts([...allProducts, product]);
+      setcontarProductos(contarProductos + product.cantida);
+      setlosProductos([...losProductos, product]);
     }
   };
 
   return (
     <div className='container-items'>
-      {loading ? (
+      {cargar ? (
         <p>Cargando productos...</p>
       ) : (
-        asyncProducts.map((product) => (
+        productosAsincronos.map((product) => (
           <div className='item' key={product.id}>
             <figure>
               <img src={product.foto} alt={product.NombreProducto} />
@@ -64,7 +61,7 @@ export const Lista = ({
             <div className='info-product'>
               <h2>{product.NombreProducto}</h2>
               <p className='price'>{product.precio} €</p>
-              <button onClick={() => onAddProduct(product)}>
+              <button onClick={() => añadirProductos(product)}>
                 Añadir al carrito
               </button>
             </div>
