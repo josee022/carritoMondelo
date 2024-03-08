@@ -1,0 +1,107 @@
+[
+	{
+	  "id": 1,
+	  "foto": "https://evergyfitness.com/media/catalog/product/cache/df9fcde6b82dd72ebb42462e7702e6fb/c/o/comba-limited.jpg",
+	  "NombreProducto": "Cuerda comba",
+	  "precio": 2.95,
+	  "cantida": 1
+	},
+	{
+	  "id": 2,
+	  "foto": "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1635697463-51kEdlouAIL._SL500_.jpg?crop=1.00xw:0.932xh;0,0.0580xh&resize=980:*",
+	  "NombreProducto": "Cinturon",
+	  "precio": 18.99,
+	  "cantida": 1
+	},
+	{
+	  "id": 3,
+	  "foto": "https://m.media-amazon.com/images/I/71-in1+1ejL.jpg",
+	  "NombreProducto": "Muñequeras",
+	  "precio": 9.99,
+	  "cantida": 1
+	},
+	{
+	  "id": 4,
+	  "foto": "https://www.gorillawear.com/resize/99202900-figure8-lifting-straps-black-5_5038763834164.jpg/0/1100/True/figure-8-lifting-straps-black.jpg",
+	  "NombreProducto": "Straps",
+	  "precio": 11.95,
+	  "cantida": 1
+	},
+	{
+	  "id": 5,
+	  "foto": "https://m.media-amazon.com/images/I/81JLd9iZzCL._AC_UF894,1000_QL80_.jpg",
+	  "NombreProducto": "Rodilleras",
+	  "precio": 17.92,
+	  "cantida": 1
+	},
+	{
+	  "id": 6,
+	  "foto": "https://tienda.iogenixnutrition.com/4238-thickbox_default/creatine-micronized-500g.jpg",
+	  "NombreProducto": "Creatina Monohydrate",
+	  "precio": 25,
+	  "cantida": 1
+	},
+	{
+	  "id": 7,
+	  "foto": "https://tienda.iogenixnutrition.com/3707-large_default/isolate-professional-2-kg.jpg",
+	  "NombreProducto": "Proteina Isolate",
+	  "precio": 40,
+	  "cantida": 1
+	},
+	{
+	  "id": 8,
+	  "foto": "https://tienda.iogenixnutrition.com/3817-large_default/gluta-bcaas-811-500-g.jpg",
+	  "NombreProducto": "Glutamina BCA",
+	  "precio": 20,
+	  "cantida": 1
+	},
+	{
+	  "id": 9,
+	  "foto": "https://tienda.iogenixnutrition.com/3806-large_default/prework-zero.jpg",
+	  "NombreProducto": "Pre-entreno",
+	  "precio": 25,
+	  "cantida": 1
+	},
+	{
+	  "id": 10,
+	  "foto": "https://saludnaturalsport.com/wp-content/uploads/2020/06/CHOCO-AMIX.jpg",
+	  "NombreProducto": "Barritas proteicas",
+	  "precio": 0.99,
+	  "cantida": 1
+	},
+	{
+	  "id": 11,
+	  "foto": "https://m.media-amazon.com/images/I/71PShGj-JZL.jpg",
+	  "NombreProducto": "Magnesio",
+	  "precio": 14.95,
+	  "cantida": 1
+	},
+	{
+	  "id": 12,
+	  "foto": "https://www.tiendasmgi.es/51023-large_default/doble-rueda-abdominal-colores-surtidos.jpg",
+	  "NombreProducto": "Rueda abdominal",
+	  "precio": 10,
+	  "cantida": 1
+	},
+	{
+	  "id": 13,
+	  "foto": "https://evergyfitness.com/media/catalog/product/cache/df9fcde6b82dd72ebb42462e7702e6fb/b/a/balon-medicinal-evergy_1.jpg",
+	  "NombreProducto": "Pack balon medicinal",
+	  "precio": 34.95,
+	  "cantida": 1
+	},
+	{
+	  "id": 14,
+	  "foto": "https://storage.googleapis.com/catalog-pictures-carrefour-es/catalog/pictures/hd_510x_/0034966442581_1.jpg",
+	  "NombreProducto": "Step",
+	  "precio": 12,
+	  "cantida": 1
+	},
+	{
+	  "id": 15,
+	  "foto": "https://m.media-amazon.com/images/I/61-tD0LYZHL._AC_UF894,1000_QL80_.jpg",
+	  "NombreProducto": "Pack bandas elásticas",
+	  "precio": 22.50,
+	  "cantida": 1
+	}
+  ]
