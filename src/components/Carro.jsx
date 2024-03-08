@@ -32,19 +32,20 @@ export const Carro = ({
 
   const utilizoFetch = async () => {
     try {
-      const datitos = losProductos.map(product => ({
+      const datitos = losProductos.map((product) => ({
         id: product.id,
         NombreProducto: product.NombreProducto,
         cantida: product.cantida,
         precio: product.precio,
       }));
 
-      const respuesta = await fetch('/api/GuardarDatos.php', {
+      const respuesta = await fetch('http://localhost:8000/api/GuardarDatos.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(datitos),
+        credentials: 'include',
       });
 
       if (respuesta.ok) {
@@ -108,7 +109,7 @@ export const Carro = ({
             </div>
 
             <div className='cart-total'>
-              <h3>Total:</h3>
+              <h3>Cuenta a pagar :</h3>
               <span className='total-pagar'>{total.toFixed(2)} €</span>
             </div>
 
@@ -121,7 +122,7 @@ export const Carro = ({
 
           </>
         ) : (
-          <p className='cart-empty'>El carrito está vacío</p>
+          <p className='cart-empty'>¡Añade tus productos!</p>
         )}
       </div>
     </div>

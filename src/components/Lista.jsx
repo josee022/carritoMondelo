@@ -51,7 +51,7 @@ export const Lista = ({
   return (
     <div className='container-items'>
       {cargar ? (
-        <p>Cargando productos...</p>
+        <p className='cargando'>Cargando productos...</p>
       ) : (
         productosAsincronos.map((product) => (
           <div className='item' key={product.id}>

@@ -37,7 +37,7 @@
 	{
 	  "id": 6,
 	  "foto": "https://tienda.iogenixnutrition.com/4238-thickbox_default/creatine-micronized-500g.jpg",
-	  "NombreProducto": "Creatina Monohydrate",
+	  "NombreProducto": "Creatina",
 	  "precio": 25,
 	  "cantida": 1
 	},
@@ -64,9 +64,9 @@
 	},
 	{
 	  "id": 10,
-	  "foto": "https://saludnaturalsport.com/wp-content/uploads/2020/06/CHOCO-AMIX.jpg",
-	  "NombreProducto": "Barritas proteicas",
-	  "precio": 0.99,
+	  "foto": "https://www.masmusculo.com/106067/waxymaize.jpg",
+	  "NombreProducto": "Waxymaize 2kg",
+	  "precio": 29.99,
 	  "cantida": 1
 	},
 	{

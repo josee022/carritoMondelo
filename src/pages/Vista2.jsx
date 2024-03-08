@@ -20,7 +20,7 @@ function Vista2() {
   const botonEstilo = {
     backgroundColor: '#cc9900',
     position: 'absolute',
-    top: '17%',
+    top: '20%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
     padding: '30px',
@@ -34,7 +34,7 @@ function Vista2() {
   return (
     <>
      <Header />
-     <br /><br /><br />
+     <br /><br /><br /><br />
       <Carro
         losProductos={losProductos}
         setlosProductos={setlosProductos}
