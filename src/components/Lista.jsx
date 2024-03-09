@@ -13,7 +13,7 @@ export const Lista = ({
   const [productosAsincronos, setproductosAsincronos] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const datosFetch = async () => {
       setcargar(true);
       try {
         const respuesta = await new Promise((resolve) =>
@@ -28,7 +28,7 @@ export const Lista = ({
       }
     };
 
-    fetchData();
+    datosFetch();
   }, []);
 
   const añadirProductos = (product) => {
