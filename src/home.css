@@ -1343,19 +1343,22 @@ caption.caption {
 
 .titulo-producto-carrito {
 	font-size: 15px;
+    margin-left: 50px;
 }
 
 .precio-producto-carrito {
 	font-weight: 700;
 	font-size: 15px;
-	margin-left: 30px;
-    margin-top: 20px;
+	margin-left: -100px;
+    margin-top: 40px;
 }
 
 .cantidad-producto-carrito {
 	font-weight: 400;
-	font-size: 20px;
-    margin-top:3px;
+	font-size: 30px;
+    margin-top:10px;
+    margin-left: 40px;
+    margin-right: -30px;
     color: #bd8009;
 }
 
@@ -1512,4 +1515,33 @@ caption.caption {
 p.cargando {
     color: white;
     font-size: 40px;
+}
+
+.botonMas,
+.botonMenos {
+  position: absolute;
+  width: 0%;
+  height: 0%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.botonMas {
+
+  background-color: rgb(178, 245, 161);
+  color: white;
+  border: none;
+  margin-top: 0px;
+    margin-right: 300px;
+}
+
+.botonMenos {
+
+  background-color: rgb(240, 140, 140);
+  color: white;
+  border: none;
+  margin-top: 30px;
+    margin-right: 300px;
 }

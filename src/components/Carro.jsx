@@ -10,9 +10,9 @@ export const Carro = ({
 }) => {
   const [activacion, setactivacion] = useState(false);
 
-  const borrarProducto = product => {
+  const borrarProducto = (product) => {
     const analisis = losProductos.filter(
-      item => item.id !== product.id
+      (item) => item.id !== product.id
     );
 
     setTotal(total - product.precio * product.cantida);
@@ -28,6 +28,37 @@ export const Carro = ({
 
   const googlePAY = () => {
     window.location.href = 'https://pay.google.com/intl/es_es/about/';
+  };
+
+  const incrementarCantidad = (product) => {
+    const nuevaLista = losProductos.map((p) => {
+      if (p.id === product.id) {
+        return { ...p, cantida: p.cantida + 1 };
+      }
+      return p;
+    });
+    setlosProductos(nuevaLista);
+    setTotal(total + product.precio);
+    setcontarProductos(contarProductos + 1);
+  };
+
+  const decrementarCantidad = (product) => {
+    if (product.cantida > 1) {
+      const nuevaLista = losProductos.map((p) => {
+        if (p.id === product.id) {
+          return { ...p, cantida: p.cantida - 1 };
+        }
+        return p;
+      });
+      setlosProductos(nuevaLista);
+      setTotal(total - product.precio);
+      setcontarProductos(contarProductos - 1);
+    } else {
+      const analisis = losProductos.filter((item) => item.id !== product.id);
+      setTotal(total - product.precio);
+      setcontarProductos(contarProductos - 1);
+      setlosProductos(analisis);
+    }
   };
 
   const utilizoFetch = async () => {
@@ -59,11 +90,10 @@ export const Carro = ({
     }
   };
 
-
   return (
     <div className={`cart-container ${activacion ? 'active' : ''}`}>
       <div className='container-icon' onClick={() => setactivacion(!activacion)}>
-      <svg className='icon-cart' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="12" height="12">
+        <svg className='icon-cart' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="12" height="12">
           <circle cx="9" cy="21" r="1" />
           <circle cx="20" cy="21" r="1" />
           <path d="M1 1h4l2.68 13.39a2 2 0 0 0 1.92 1.61h10.8a2 2 0 0 0 1.92-1.61L19 6H4" />
@@ -80,14 +110,18 @@ export const Carro = ({
               {losProductos.map(product => (
                 <div className='cart-product' key={product.id}>
                   <div className='info-cart-product'>
-                    <span className='cantidad-producto-carrito'>
-                      {product.cantida}
-                    </span>
+                    <div className='quantity-buttons'>
+                      <button className='botonMas' onClick={() => incrementarCantidad(product)}>+</button>
+                      <button className='botonMenos' onClick={() => decrementarCantidad(product)}>-</button>
+                    </div>
                     <p className='titulo-producto-carrito'>
                       {product.NombreProducto}
                     </p>
                     <span className='precio-producto-carrito'>
                       {product.precio.toFixed(2)} €
+                    </span>
+                    <span className='cantidad-producto-carrito'>
+                      {product.cantida}
                     </span>
                   </div>
                   <svg

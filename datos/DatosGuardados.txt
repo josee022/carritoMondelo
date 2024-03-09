@@ -1,6 +1,12 @@
-1º PRODUCTO: ID->4, NOMBRE->Straps, UNIDADES->4, PRECIO->11.95€, _____TOTAL->47.80€.
+1º PRODUCTO: ID->2, NOMBRE->Cinturon, UNIDADES->1, PRECIO->18.99€, _____TOTAL->18.99€.
+
+2º PRODUCTO: ID->3, NOMBRE->Muñequeras, UNIDADES->1, PRECIO->9.99€, _____TOTAL->9.99€.
+
+3º PRODUCTO: ID->7, NOMBRE->Proteina Isolate, UNIDADES->2, PRECIO->40€, _____TOTAL->80.00€.
+
+4º PRODUCTO: ID->6, NOMBRE->Creatina, UNIDADES->1, PRECIO->25€, _____TOTAL->25.00€.
 
 ____________________________________________________________________________________________________
 
-TOTAL DEL PEDIDO -> 47.80€.
+TOTAL DEL PEDIDO -> 133.98€.
 
